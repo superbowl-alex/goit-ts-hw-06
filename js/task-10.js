@@ -21,7 +21,6 @@ const createBoxes = (amount) => {
     insertEl.style.width = sizeOfDiv + "px";
     insertEl.style.height = sizeOfDiv + "px";
     insertEl.style.backgroundColor = getRandomHexColor();
-    console.log(insertEl.style.backgroundColor);
     refs.resultEl.append(insertEl);
   }
 };
