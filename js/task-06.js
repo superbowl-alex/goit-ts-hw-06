@@ -4,7 +4,7 @@ textInput.addEventListener("focus", () => {
   textInput.value = "";
 });
 textInput.addEventListener("blur", () => {
-  const isValid = textInput.value.length == textInput.dataset.length;
+  const isValid = textInput.value.length === +textInput.dataset.length;
   const addClass = isValid ? "valid" : "invalid";
   textInput.classList.add(addClass);
 });
