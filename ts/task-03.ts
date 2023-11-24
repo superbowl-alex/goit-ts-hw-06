@@ -1,4 +1,8 @@
-const images = [
+type Image = {
+  url: string;
+  alt: string;
+};
+const images: Image[] = [
   {
     url: "https://images.pexels.com/photos/140134/pexels-photo-140134.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260",
     alt: "White and Black Long Fur Cat",
@@ -12,13 +16,15 @@ const images = [
     alt: "Group of Horses Running",
   },
 ];
-const listEl = document.querySelector(".gallery");
-const markup = images
+const listElImage: HTMLElement | null = document.querySelector(".gallery");
+const markup: string = images
   .map(
-    (image) => `<li class="gallery-item"><img class="gallery-image"
+    (image: Image) => `<li class="gallery-item"><img class="gallery-image"
   src=${image.url}
   alt=${image.alt}
 /></li>`
   )
   .join("");
-listEl.insertAdjacentHTML("beforeend", markup);
+  if(listElImage) {
+    listElImage.insertAdjacentHTML("beforeend", markup);
+  }
